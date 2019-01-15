@@ -15,4 +15,7 @@ user_store = gets.chomp
 
 new_store = Store.create(name: user_store)
 new_store.valid?
-puts new_store.errors.messages
+error = new_store.errors.messages
+error.each do |key, value|
+  puts "#{key} #{value}"
+end
